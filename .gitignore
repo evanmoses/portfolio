@@ -1,3 +1,5 @@
-css/.stylelintrc
+public/css/.stylelintrc
+/node_modules
+npm-debug.log
 .DS_Store
 /*.env
