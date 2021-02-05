@@ -54,6 +54,57 @@ table {
   border-spacing: 0;
 }
 
-.spacer {
-  min-height: 1000px;
+header {
+  background-color: #393e46;
+  height: 50px;
+}
+
+/* DARK MODE SLIDER */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 17px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  border-radius: 17px;
+}
+
+input:checked + .slider {
+  background-color: #00adb5;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00adb5;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(13px);
+  -ms-transform: translateX(13px);
+  transform: translateX(13px);
 }
