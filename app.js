@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const basicAuth = require('express-basic-auth');
+const Post = require('./models/post.model.js');
 require('dotenv').config();
 
 const app = express();
@@ -32,27 +33,20 @@ mongoose.connect(mongoosePort, {
   useCreateIndex: true,
 });
 
-const postSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-    index: {
-      unique: true,
-      collation: {
-        locale: 'en',
-        strength: 2,
-      },
-    },
-  },
-  content: String,
+app.get('/', (req, res) => {
+  // Post.find({}, (err, posts) => {
+  //   if (!err) {
+  res.render('home' /* { posts } */);
+  //   }
+  // });
 });
 
-const Post = mongoose.model('Post', postSchema);
+let port = process.env.PORT;
+// port = ''
+if (port == null || port === '') {
+  port = 3000;
+}
 
-app.get('/', (req, res) => {
-  Post.find({}, (err, posts) => {
-    if (!err) {
-      res.render('home', { posts });
-    }
-  });
+app.listen(port, () => {
+  console.log('server started successfully');
 });

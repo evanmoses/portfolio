@@ -1,92 +1,20 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8" />
-  <title>Evan Moses</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="https://kit.fontawesome.com/762fe8cf8c.js" crossorigin="anonymous"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
-  <link rel="manifest" href="images/site.webmanifest" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&family=Sacramento&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <header>
-
-  </header>
+<% /* eslint-disable */ %>
+<%- include("./partials/header") -%>
 
   <main>
-    <section id="title">
-      <img class="top-cloud" src="images/cloud.png" alt="cloud-img" />
-      <div class="title-text">
-        <h1>I'm Evan.</h1>
-        <h3>a web developer.</h3>
-      </div>
-      <img class="bottom-cloud" src="images/cloud.png" alt="cloud-img" />
-      <img class="mountainpic" src="images/mountain.png" alt="mountain-img" />
+    <section id="about">
     </section>
 
-    <section id="hello">
-      <div class="circle-img1 mewave"></div>
-      <h2>Hello.</h2>
-      <p>My name's Evan. I'm a web developer and (reformed) entrepreneur. I like building cool stuff, especially if it makes it easier for people to do their job, to manage their life, or to have fun!</p>
+    <section id="projects">
     </section>
 
-    <section id="skills">
-      <div class="circle-img1 mestrong"></div>
-      <h2>My skills.</h2>
-      <p>I have a very particular set of skills. Like Liam Neeson, but way nerdier.</p>
-      <div class="skill-box">
-        <div class="skill-item">
-          <i class="fab fa-html5 main-icon"></i>
-          <h3>HTML</h3>
-          <p>Tiny head, huge body.</p>
-        </div>
-        <div class="skill-item">
-          <i class="fab fa-css3-alt main-icon"></i>
-          <h3>CSS</h3>
-          <p>Once more with feeling.</p>
-        </div>
-        <div class="skill-item">
-          <i class="fab fa-js main-icon"></i>
-          <h3>Javascript</h3>
-          <p>Internet duct tape.</p>
-        </div>
-      </div>
+    <section id="blog">
+
     </section>
 
-    <section id="contact-me">
-      <div class="circle-img1 mewink"></div>
-      <h2>Get in touch.</h2>
-      <p>I want to work with nice people on cool stuff, so drop me a line</p>
-      <a class="btn" href="mailto:name@email.com"><i class="far fa-envelope"></i> CONTACT ME</a>
+    <section id="contact">
+
     </section>
   </main>
 
-  <footer>
-    <div class="mecoffee"></div>
-    <a class="footer-link" href="https://www.github.com/evanmoses">
-      <i class="fab fa-github footer-icon" title="my github profile"></i>
-    </a>
-    <a class="footer-link" href="https://www.linkedin.com/in/evanbmoses/">
-      <i class="fab fa-linkedin footer-icon" title="ugh...linkedin"></i>
-    </a>
-    <a class="footer-link" href="https://www.evanmoses.com">
-      <i class="fab fa-codepen footer-icon" title="check out my codepen"></i>
-    </a>
-    <p class="copydate">&copy;
-      <span id="copyright">
-        <script>
-          document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-        </script>
-      </span>
-      Evan Moses
-    </p>
-  </footer>
-
-</body>
-
-</html>
+<%- include("./partials/footer") -%>
