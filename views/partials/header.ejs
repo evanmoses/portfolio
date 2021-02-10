@@ -5,11 +5,8 @@
   <meta charset="utf-8" />
   <title>Evan Moses</title>
   <script src="https://kit.fontawesome.com/762fe8cf8c.js" crossorigin="anonymous"></script>
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
-  <link rel="manifest" href="images/site.webmanifest" />
-  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Merriweather&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
@@ -18,18 +15,26 @@
     <nav>
       <div>
         <ul>
-          <li><a href="#intro">Evan Moses</a></li>
+          <div>
+            <li class="title-link"><a href="#intro">Evan<br/>Moses</li>
+          </div>
           <li><a href="#about">About</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#blog">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-      <div>
+      <div class="dark-slide">
+
         <label class="switch">
-          <input type="checkbox">
+          <input id="check-toggle" type="checkbox">
           <span class="slider"></span>
+
         </label>
+        <p class='no-dark'>
+          Dark Mode?
+        </p>
+
       </div>
     </nav>
   </header>
