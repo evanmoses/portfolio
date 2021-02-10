@@ -52,6 +52,7 @@ table {
 
 html {
   --scroll-behavior: smooth;
+
   scroll-behavior: smooth;
 }
 
@@ -117,28 +118,132 @@ nav {
   align-items: center;
 }
 
-nav ul {
+.nav-items {
   display: flex;
   align-items: center;
+  order: 1;
 }
 
-nav ul li {
+.nav-items ul {
+  display: flex;
+}
+
+ul li a {
+  text-decoration: none;
+  color: #eee;
   margin-right: 20px;
 }
 
-nav ul li a {
-  text-decoration: none;
+.title-link a {
   color: #eee;
+  text-decoration: none;
+}
+
+/* Style the menu link */
+.nav .skip {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  background: #ddd;
+  overflow: hidden;
+  width: 2.5em;
+  height: 2.5em;
+  text-align: center;
+  line-height: 2.5em;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.hamburger {
+  &:focus {
+    outline: none;
+  }
+}
+
+/* Hide and position the closed .nav ul */
+.nav-items ul {
+  max-height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 67px;
+  left: 0;
+  transition: max-height 0.6s ease;
+  background-color: #2E333C;
+  display: block;
+  width: 100%;
+}
+
+/* Give the .nav ul a height when it's been opened, i.e. make it show */
+.nav-items.open ul {
+  max-height: 20em;
+}
+
+/* Style the list item links for ease of touch on small screens */
+.nav-items li a {
+  margin: 20px 35px;
+  display: block;
+}
+
+/* On screens larger than 35em, remove the menu link and display all menu items */
+@media screen and (min-width: 768px) {
+  nav {
+    justify-content: flex-start;
+  }
+
+  .nav-items {
+    order: 2;
+  }
+
+  .nav-items ul {
+    overflow: auto;
+    max-height: inherit;
+    position: static;
+    display: flex;
+    justify-content: flex-start;
+    background-color: transparent;
+  }
+
+  .nav-items li {
+    text-align: left;
+    display: inline-block;
+    border-top: 0;
+  }
+
+  .nav-items li:last-child {
+    border: 0;
+  }
+
+  .nav-items li a {
+    margin: 5px 20px 5px 0;
+  }
+
+  .nav-items .skip {
+    display: none;
+    visibility: hidden;
+  }
+
+  .dark-slide {
+    margin-left: auto;
+  }
+
+  .title-link {
+    max-width: 60px;
+    order: 1;
+    margin-right: 50px;
+  }
 }
 
 .title-link {
-  margin-right: 50px;
   font-size: 1.3rem;
   font-weight: 500;
+  order: 2;
 }
 
 .dark-slide {
   text-align: center;
+  order: 3;
 }
 
 .no-dark {
