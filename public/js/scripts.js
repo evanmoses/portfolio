@@ -1,42 +1,49 @@
 // NAV BAR AND HAMBURGER MENU
-
+const content = document.querySelector('body');
 const nav = document.querySelector('.nav-items');
 const navToggle = document.querySelector('.skip');
 const hamburger = document.querySelector('.hamburger');
-const spreaders = document.querySelectorAll('section');
 const anchorLinks = document.querySelectorAll('.nav-items ul li');
 let width = window.innerWidth;
+content.style.transition = 'margin-top 0.8s';
 
 window.addEventListener('resize', () => {
   width = window.innerWidth;
   if (width > 768) {
     nav.classList.remove('open');
     hamburger.classList.remove('is-active');
-    spreaders.forEach((spreader) => {
-      spreader.classList.remove('spreader');
-    });
+    content.style.transition = 'margin-top 0.8s';
+    content.style.marginTop = 0;
   }
 });
 
 navToggle.addEventListener('click', (e) => {
   if (width < 768) {
+    if (nav.classList.contains('open')) {
+      content.style.transition = 'margin-top 0.8s';
+      content.style.marginTop = 0;
+    } else {
+      content.style.transition = 'margin-top 0.4s';
+      content.style.marginTop = '250px';
+    }
     nav.classList.toggle('open');
     hamburger.classList.toggle('is-active');
-    spreaders.forEach((spreader) => {
-      spreader.classList.toggle('spreader');
-    });
     e.preventDefault();
   }
 });
 
 anchorLinks.forEach((anchorLink) => {
-  anchorLink.addEventListener('click', (e) => {
+  anchorLink.addEventListener('click', () => {
     if (width < 768) {
+      if (nav.classList.contains('open')) {
+        content.style.transition = 'margin-top 0.8s';
+        content.style.marginTop = 0;
+      } else {
+        content.style.transition = 'margin-top 0.4s';
+        content.style.marginTop = '250px';
+      }
       nav.classList.toggle('open');
       hamburger.classList.toggle('is-active');
-      spreaders.forEach((spreader) => {
-        spreader.classList.toggle('spreader');
-      });
     }
   });
 });
@@ -48,9 +55,8 @@ document.addEventListener('click', (event) => {
   if (!isClickInside && nav.classList.contains('open')) {
     nav.classList.remove('open');
     hamburger.classList.remove('is-active');
-    spreaders.forEach((spreader) => {
-      spreader.classList.remove('spreader');
-    });
+    spreader.classList.remove('spreader');
+    window.scrollBy(0, 170);
   }
 });
 

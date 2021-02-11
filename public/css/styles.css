@@ -170,7 +170,7 @@ ul li a {
   position: absolute;
   top: 67px;
   left: 0;
-  transition: max-height 0.6s ease;
+  transition: max-height 0.6s;
   background-color: #2e333c;
   display: block;
   width: 100%;
@@ -340,21 +340,16 @@ main {
 }
 
 section {
-  min-height: 200px;
-  margin-top: 50px;
+  min-height: 800px;
+  margin-top: 20px;
 }
 
 section::before {
   display: block;
   content: '';
   pointer-events: none;
-  height: 100px;
-  margin: -100px 0 0;
-}
-
-.spreader::before {
-  padding-top: 170px;
-  transition: padding-top 0.4s ease-out;
+  height: 250px;
+  margin: -250px 0 0;
 }
 
 h2 {
@@ -413,7 +408,7 @@ h2 {
 
 @media screen and (max-width: 768px) {
   .img-col {
-    margin-top: 20px;
+    margin-top: 0;
     order: 1;
     width: 100%;
   }
@@ -426,4 +421,8 @@ h2 {
     width: 150px;
     height: 150px;
   }
+}
+
+.copydate {
+  color: #eee;
 }
