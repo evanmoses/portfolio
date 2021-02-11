@@ -3,14 +3,43 @@
 const nav = document.querySelector('.nav-items');
 const navToggle = document.querySelector('.skip');
 const hamburger = document.querySelector('.hamburger');
-if (navToggle) {
-  navToggle.addEventListener('click',
-    (e) => {
+const spreaders = document.querySelectorAll('section');
+const anchorLinks = document.querySelectorAll('.nav-items ul li');
+let width = window.innerWidth;
+
+window.addEventListener('resize', () => {
+  width = window.innerWidth;
+  if (width > 768) {
+    nav.classList.remove('open');
+    hamburger.classList.remove('is-active');
+    spreaders.forEach((spreader) => {
+      spreader.classList.remove('spreader');
+    });
+  }
+});
+
+navToggle.addEventListener('click', (e) => {
+  if (width < 768) {
+    nav.classList.toggle('open');
+    hamburger.classList.toggle('is-active');
+    spreaders.forEach((spreader) => {
+      spreader.classList.toggle('spreader');
+    });
+    e.preventDefault();
+  }
+});
+
+anchorLinks.forEach((anchorLink) => {
+  anchorLink.addEventListener('click', (e) => {
+    if (width < 768) {
       nav.classList.toggle('open');
       hamburger.classList.toggle('is-active');
-      e.preventDefault();
-    }, false);
-}
+      spreaders.forEach((spreader) => {
+        spreader.classList.toggle('spreader');
+      });
+    }
+  });
+});
 
 /* Any click outside of the nav element will close the menu if it's open */
 const specifiedElement = document.querySelector('nav');
@@ -19,6 +48,9 @@ document.addEventListener('click', (event) => {
   if (!isClickInside && nav.classList.contains('open')) {
     nav.classList.remove('open');
     hamburger.classList.remove('is-active');
+    spreaders.forEach((spreader) => {
+      spreader.classList.remove('spreader');
+    });
   }
 });
 
