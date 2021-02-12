@@ -12,6 +12,7 @@ const postSchema = new mongoose.Schema({
       },
     },
   },
+  lede: String,
   content: String,
 });
 

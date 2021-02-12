@@ -88,7 +88,7 @@ document.addEventListener('click', (event) => {
 const cardExpander = document.querySelector('.card-expander');
 const toggleContent = document.querySelector('.toggle-content');
 const toggleIcon = document.querySelector('.toggle-icon');
-cardExpander.addEventListener('click', (e) => {
+cardExpander.addEventListener('click', () => {
   toggleContent.classList.toggle('expanded');
   toggleIcon.classList.toggle('rotated');
 });

@@ -335,7 +335,7 @@ section::before {
   content: '';
   pointer-events: none;
   height: 250px;
-  margin: -100px 0 0;
+  margin: -250px 0 0;
 }
 
 #intro::before {
@@ -420,21 +420,25 @@ h2 {
   }
 }
 
-/* Project Cards */
-.project-container {
+.section-container {
   display: flex;
-  margin: 60px 0 100px;
+  margin: 60px 0 30px;
 }
 
-.project-row {
+.section-row {
   display: flex;
+  max-width: 1200px;
+  flex-wrap: wrap;
 }
+
+/* Project Cards */
 
 .project-card {
   width: 280px;
   background-color: #393e46;
   overflow: hidden;
   padding: 10px;
+  margin: 0 60px 60px 0;
 }
 
 .project-card img {
@@ -446,6 +450,7 @@ h2 {
 
 .project-card h3 {
   font-size: 2rem;
+  line-height: 1.2;
   font-weight: 400;
   color: #eee;
   margin-bottom: 10px;
