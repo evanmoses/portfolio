@@ -5,14 +5,12 @@ const navToggle = document.querySelector('.skip');
 const hamburger = document.querySelector('.hamburger');
 const anchorLinks = document.querySelectorAll('.nav-items ul li');
 let width = window.innerWidth;
-content.style.transition = 'margin-top 0.8s';
 
 window.addEventListener('resize', () => {
   width = window.innerWidth;
   if (width > 768) {
     nav.classList.remove('open');
     hamburger.classList.remove('is-active');
-    content.style.transition = 'margin-top 0.8s';
     content.style.marginTop = 0;
   }
 });
@@ -20,10 +18,8 @@ window.addEventListener('resize', () => {
 navToggle.addEventListener('click', (e) => {
   if (width < 768) {
     if (nav.classList.contains('open')) {
-      content.style.transition = 'margin-top 0.8s';
       content.style.marginTop = 0;
     } else {
-      content.style.transition = 'margin-top 0.4s';
       content.style.marginTop = '250px';
     }
     nav.classList.toggle('open');
@@ -36,10 +32,8 @@ anchorLinks.forEach((anchorLink) => {
   anchorLink.addEventListener('click', () => {
     if (width < 768) {
       if (nav.classList.contains('open')) {
-        content.style.transition = 'margin-top 0.8s';
         content.style.marginTop = 0;
       } else {
-        content.style.transition = 'margin-top 0.4s';
         content.style.marginTop = '250px';
       }
       nav.classList.toggle('open');
@@ -55,8 +49,7 @@ document.addEventListener('click', (event) => {
   if (!isClickInside && nav.classList.contains('open')) {
     nav.classList.remove('open');
     hamburger.classList.remove('is-active');
-    spreader.classList.remove('spreader');
-    window.scrollBy(0, 170);
+    content.style.marginTop = 0;
   }
 });
 
