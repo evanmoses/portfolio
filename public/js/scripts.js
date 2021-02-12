@@ -1,3 +1,34 @@
+// DARK MODE
+const btn = document.querySelector('.switch');
+const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+// set based on system preferences or local storage
+const currentTheme = localStorage.getItem('theme');
+if (currentTheme === 'dark') {
+  document.body.classList.toggle('dark-theme');
+  document.getElementById('check-toggle').checked = true;
+} else if (currentTheme === 'light') {
+  document.body.classList.toggle('light-theme');
+  document.getElementById('check-toggle').checked = false;
+}
+
+// toggle dark mode on button click
+btn.addEventListener('change', () => {
+  let theme = '';
+  if (prefersDarkScheme.matches) {
+    document.body.classList.toggle('light-theme');
+    theme = document.body.classList.contains('light-theme')
+      ? 'light'
+      : 'dark';
+  } else {
+    document.body.classList.toggle('dark-theme');
+    theme = document.body.classList.contains('dark-theme')
+      ? 'dark'
+      : 'light';
+  }
+  localStorage.setItem('theme', theme);
+});
+
 // NAV BAR AND HAMBURGER MENU
 const content = document.querySelector('body');
 const nav = document.querySelector('.nav-items');
@@ -53,35 +84,13 @@ document.addEventListener('click', (event) => {
   }
 });
 
-// DARK MODE
-const btn = document.querySelector('.switch');
-const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-
-// set based on system preferences or local storage
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme === 'dark') {
-  document.body.classList.toggle('dark-theme');
-  document.getElementById('check-toggle').checked = true;
-} else if (currentTheme === 'light') {
-  document.body.classList.toggle('light-theme');
-  document.getElementById('check-toggle').checked = false;
-}
-
-// toggle dark mode on button click
-btn.addEventListener('change', () => {
-  let theme = '';
-  if (prefersDarkScheme.matches) {
-    document.body.classList.toggle('light-theme');
-    theme = document.body.classList.contains('light-theme')
-      ? 'light'
-      : 'dark';
-  } else {
-    document.body.classList.toggle('dark-theme');
-    theme = document.body.classList.contains('dark-theme')
-      ? 'dark'
-      : 'light';
-  }
-  localStorage.setItem('theme', theme);
+// PROJECT CARD EXPANDING TOGGLE;
+const cardExpander = document.querySelector('.card-expander');
+const toggleContent = document.querySelector('.toggle-content');
+const toggleIcon = document.querySelector('.toggle-icon');
+cardExpander.addEventListener('click', (e) => {
+  toggleContent.classList.toggle('expanded');
+  toggleIcon.classList.toggle('rotated');
 });
 
 // FOOTER COPYRIGHT;
