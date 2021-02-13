@@ -85,12 +85,29 @@ document.addEventListener('click', (event) => {
 });
 
 // PROJECT CARD EXPANDING TOGGLE;
-const cardExpander = document.querySelector('.card-expander');
-const toggleContent = document.querySelector('.toggle-content');
-const toggleIcon = document.querySelector('.toggle-icon');
-cardExpander.addEventListener('click', () => {
-  toggleContent.classList.toggle('expanded');
-  toggleIcon.classList.toggle('rotated');
+const cardExpanders = document.querySelectorAll('.card-expander');
+//
+// cardExpanders.forEach((cardExpander) => {
+//   cardExpander.addEventListener('mousedown', (e) => {
+//     const thisButton = e.target;
+//     const thisContent = thisButton.parentNode.getElementsByClassName('toggle-content')[0];
+//     const thisIcon = thisButton.parentNode.getElementsByClassName('toggle-icon')[0];
+//     thisContent.classList.toggle('expanded');
+//     thisIcon.classList.toggle('rotated');
+//     thisButton.disabled = true;
+//     setTimeout(() => {
+//       thisButton.disabled = false;
+//     }, 500);
+//   });
+// });
+
+cardExpanders.forEach((cardExpander) => {
+  cardExpander.addEventListener('mousedown', function () {
+    const thisContent = this.parentNode.getElementsByClassName('toggle-content')[0];
+    const thisIcon = this.parentNode.getElementsByClassName('toggle-icon')[0];
+    thisContent.classList.toggle('expanded');
+    thisIcon.classList.toggle('rotated');
+  });
 });
 
 // FOOTER COPYRIGHT;

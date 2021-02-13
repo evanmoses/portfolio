@@ -439,6 +439,7 @@ h2 {
   overflow: hidden;
   padding: 10px;
   margin: 0 60px 60px 0;
+  height: fit-content;
 }
 
 .project-card img {
@@ -475,7 +476,7 @@ h2 {
 
 .project-links {
   text-align: center;
-  margin: 10px 0 10px;
+  margin: 0 0 10px;
 }
 
 .project-icon {
@@ -489,7 +490,7 @@ h2 {
   max-height: 0;
   overflow: hidden;
   margin: 15px 0 15px;
-  transition: max-height 0.5s ease;
+  transition: max-height 0.5s;
 }
 
 .toggle-content p {
@@ -508,11 +509,13 @@ h2 {
   min-height: 15px;
   margin: 5px -10px -10px;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.5s;
 }
 
-.card-expander:hover {
-  background-color: #00adb5;
+@media (hover: hover) and (pointer: fine) {
+  .card-expander:hover {
+    background-color: #00adb5;
+  }
 }
 
 .card-toggle {
