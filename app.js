@@ -20,8 +20,8 @@ function myAuthorizer(username, password) {
   // eslint-disable-next-line no-bitwise
   return userMatches & passwordMatches;
 }
-// move to get route for addpost
-// app.use(basicAuth({ authorizer: myAuthorizer, challenge: true }));
+
+app.use('/compose', basicAuth({ authorizer: myAuthorizer, challenge: true }));
 
 // eslint-disable-next-line prefer-const
 let mongoosePort = process.env.CLOUD_DB;
@@ -34,12 +34,25 @@ mongoose.connect(mongoosePort, {
 });
 
 app.get('/', (req, res) => {
-  // Post.find({}, (err, posts) => {
-  //   if (!err) {
-  res.render('home' /* { posts } */);
-  //   }
-  // });
+  Post.find({}, (err, posts) => {
+    if (!err) {
+      res.render('home', { posts });
+    }
+  });
 });
+
+app.route('/compose')
+  .get((req, res) => {
+    res.render('compose');
+  })
+  .post((req, res) => {
+    const { title, lede, content } = req.body;
+    const newPost = new Post({
+      title, lede, content,
+    });
+    newPost.save();
+    res.redirect('/');
+  });
 
 let port = process.env.PORT;
 // port = ''

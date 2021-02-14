@@ -552,3 +552,15 @@ footer {
   font-size: 0.8rem;
   color: #eee;
 }
+
+.form-group {
+  margin: 200px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.submit-btn {
+  margin: 10px 0 10px;
+  width: 100px;
+}

@@ -93,10 +93,12 @@
       <div class="section-container">
         <div class="section-row">
           <div class="project-card">
-            <a href="https://thawing-caverns-01686.herokuapp.com/" target="_blank"><img src="images/strat-tool-screen.png" alt="Screenshot of strategy toolkit website" title="launch live demo"></a>
 
-            <h3 class=project-title>Making a developer portfolio site</h3>
-            <p>I need a portfolio site. Maybe some developers don’t, but it’s near enough to universal and required that I should definitely have one. I had one previously but I wasn’t super happy with it, so it’s time to add some sweet styling and some new goodies: this blog(!), dark mode, better project navigation, etc. It seemed worth it to document the process and some of the choices I made.</p>
+            <%  posts.forEach(function(post){ %>
+              <h3 class=project-title><%=post.title%></h3>
+              <p><%=post.lede%></p>
+              <a href="/posts/<%=post.id%>">Read More</a>
+            <% }) %>
           </div>
 
         </div>
