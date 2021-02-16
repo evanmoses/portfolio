@@ -54,6 +54,20 @@ app.route('/compose')
     res.redirect('/');
   });
 
+app.route('compose/:id')
+  .get((req, res) => {
+    const postID = req.params.id;
+    Post.find({ postID }, (err, posts) => {
+      res.render('edit', posts);
+    });
+  })
+  .delete((req, res) => {
+
+  })
+  .patch((req, res) => {
+
+  });
+
 let port = process.env.PORT;
 // port = ''
 if (port == null || port === '') {

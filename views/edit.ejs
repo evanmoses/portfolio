@@ -1,0 +1,18 @@
+<% /* eslint-disable */ %>
+<%- include("partials/header"); -%>
+    <h1>Compose</h1>
+    <form class="" action="/compose" method="post">
+      <div class="form-group">
+        <label>Title</label>
+        <input class="form-control" type="text" name="title">
+        <label>Lede</label>
+        <textarea class="form-control" name="lede" rows="5" cols="30"></textarea>
+        <label>Post</label>
+        <textarea class="form-control" name="content" rows="10" cols="30"></textarea>
+        <button class="submit-btn" type="submit" name="update">Update</button>
+        <button class="submit-btn" type="submit" name="delete">Delete</button>
+      </div>
+
+    </form>
+
+<%- include("partials/footer"); -%>
