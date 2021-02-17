@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const basicAuth = require('express-basic-auth');
+const methodOverride = require('method-override');
 const Post = require('./models/post.model.js');
 require('dotenv').config();
 
@@ -11,6 +12,7 @@ app.set('view engine', 'ejs');
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 const user = process.env.USER;
 const pass = process.env.PASS;
@@ -49,6 +51,15 @@ app.get('/blog', (req, res) => {
   });
 });
 
+app.get('/blog/:id', (req, res) => {
+  const { id } = req.params;
+  Post.findOne({ _id: id }, (err, post) => {
+    if (!err && post) {
+      res.render('blogpost', { post });
+    }
+  });
+});
+
 app.route('/compose')
   .get((req, res) => {
     res.render('compose');
@@ -62,19 +73,37 @@ app.route('/compose')
     res.redirect('/');
   });
 
-app.route('compose/:id')
-  .get((req, res) => {
-    const postID = req.params.id;
-    Post.find({ postID }, (err, posts) => {
-      res.render('edit', posts);
-    });
-  })
-  .delete((req, res) => {
-
-  })
-  .patch((req, res) => {
-
+app.get('/compose/:id', (req, res) => {
+  const { id } = req.params;
+  Post.findOne({ _id: id }, (err, post) => {
+    res.render('edit', { post });
   });
+});
+app.delete('/compose/:id', (req, res) => {
+  const { id } = req.params;
+  Post.findOneAndDelete({ _id: id }, (err) => {
+    if (err) res.status(500);
+    console.log('post sucesfully deleted');
+    res.redirect('/');
+  });
+});
+app.put('/compose/:id', (req, res) => {
+  const { id } = req.params;
+  Post.findById(id, (err, post) => {
+    if (err) res.status(500);
+    /* eslint-disable no-param-reassign */
+    console.log(req.body.title);
+    post.title = req.body.title;
+    post.lede = req.body.lede;
+    post.content = req.body.content;
+    /* eslint-enable no-param-reassign */
+    post.save((error, tool) => {
+      if (error) res.status(500);
+      console.log(tool);
+    });
+    res.redirect(`/blog/${id}`);
+  });
+});
 
 let port = process.env.PORT;
 // port = ''

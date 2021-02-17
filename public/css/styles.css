@@ -553,8 +553,12 @@ footer {
   color: #eee;
 }
 
+.form-container {
+  margin-top: 20px;
+  padding: 10%;
+}
+
 .form-group {
-  margin: 200px;
   display: flex;
   flex-direction: column;
   color: white;

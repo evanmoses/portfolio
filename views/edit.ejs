@@ -1,18 +1,29 @@
 <% /* eslint-disable */ %>
 <%- include("partials/header"); -%>
-    <h1>Edit</h1>
-    <form class="" action="/compose" method="post">
+  <div class="form-container">
+    <form class="" action="/compose/<%=post._id%>?_method=put" method="post">
       <div class="form-group">
         <label>Title</label>
-        <input class="form-control" type="text" name="title">
+        <input class="form-control" type="text" name="title" value="<%=post.title%>">
         <label>Lede</label>
-        <textarea class="form-control" name="lede" rows="5" cols="30"></textarea>
+        <textarea class="form-control" name="lede" rows="5" cols="30"><%=post.lede%></textarea>
         <label>Post</label>
-        <textarea class="form-control" name="content" rows="10" cols="30"></textarea>
+        <textarea class="form-control" name="content" rows="10" cols="30"><%=post.content%></textarea>
+
         <button class="submit-btn" type="submit" name="update">Update</button>
+      </div>
+    </form>
+
+    <form class="" action="/compose/<%=post._id%>?_method=delete" method="post">
+      <div class="form-group">
         <button class="submit-btn" type="submit" name="delete">Delete</button>
       </div>
-
     </form>
+  </div>
+
+
+
+
+
 
 <%- include("partials/footer"); -%>
