@@ -41,6 +41,14 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/blog', (req, res) => {
+  Post.find({}, (err, posts) => {
+    if (!err) {
+      res.render('blog', { posts });
+    }
+  });
+});
+
 app.route('/compose')
   .get((req, res) => {
     res.render('compose');

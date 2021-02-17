@@ -1,0 +1,16 @@
+<% /* eslint-disable */ %>
+<%- include("partials/header"); -%>
+  <div class="section-container">
+    <div class="section-row">
+      <div class="project-card">
+
+        <%  posts.forEach(function(post){ %>
+          <h3 class=project-title><%=post.title%></h3>
+          <p><%=post.lede%></p>
+          <a href="/posts/<%=post.id%>">Read More</a>
+        <% }) %>
+      </div>
+
+    </div>
+  </div>
+<%- include("partials/footer"); -%>
