@@ -36,7 +36,7 @@ mongoose.connect(mongoosePort, {
 });
 
 app.get('/', (req, res) => {
-  Post.find({}).sort('date').exec((err, posts) => {
+  Post.find({}).sort('-createdAt').exec((err, posts) => {
     if (!err) {
       res.render('home', { posts });
     }
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/blog', (req, res) => {
-  Post.find({}, (err, posts) => {
+  Post.find({}).sort('-createdAt').exec((err, posts) => {
     if (!err) {
       res.render('blog', { posts });
     }

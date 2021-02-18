@@ -347,7 +347,7 @@ main {
 }
 
 section {
-  margin: 50px 0 80px;
+  margin: 50px 0 50px;
 }
 
 section::before {
@@ -434,7 +434,7 @@ section::before {
 
 .section-container {
   display: flex;
-  margin: 60px 0 30px;
+  margin: 30px 0 30px;
 }
 
 .section-row {
@@ -446,12 +446,26 @@ section::before {
 
 #about {
   max-width: 800px;
+  margin-bottom: 80px;
 }
 
 .content-p {
   font-size: 1.2rem;
   line-height: 1.8rem;
   margin-bottom: 1.8rem;
+}
+
+.content-link {
+  text-decoration: none;
+  color: #00adb5;
+}
+
+.content-link:hover {
+  text-decoration: underline;
+}
+
+.contact-p {
+  line-height: 1.8rem;
 }
 
 /* Project Cards */

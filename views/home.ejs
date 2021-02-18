@@ -95,6 +95,9 @@
 
     <section id="blog">
       <h2>Blog</h2>
+      <p class='content-p' id='blog-top'>
+        I write infrequently(!) about projects that I've done or things I find interesting. Check out all my posts <a class='content-link' href='/blog'>here</a>.
+        </p>
       <div class="section-container">
         <div class="section-row">
 
@@ -103,7 +106,7 @@
                 <div class="project-card">
                   <h3 class=project-title><%=post.title%></h3>
                   <p><%=post.lede%></p>
-                  <a href="/blog/<%=post.id%>">Read More</a>
+                  <a class="content-link" href="/blog/<%=post.id%>">Read Post</a>
                 </div>
               <% } %>
             <% }) %>
@@ -115,10 +118,13 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>email: hello@evanmoses.com</p>
-      <p>github: evanmoses</p>
-      <p>twitter: @evan_moses</p>
-      <p>linkedin: evanbmoses</p>
+      <p class='content-p'>
+        If you're interested in working together, if there's something you'd like to chat about, or if you just want to say hey:
+        </p>
+      <p class='contact-p'>email: hello@evanmoses.com</p>
+      <p  class='contact-p'>github: <a class=content-link href="https://www.github.com/evanmoses" target="_blank">evanmoses</a></p>
+      <p  class='contact-p'>twitter: <a class=content-link href="https://www.twitter.com/evan_moses" target="_blank">@evan_moses</a></p>
+      <p class='contact-p'>linkedin: <a class=content-link href="https://www.linkedin.com/in/evanbmoses" target="_blank">evanbmoses</a></p>
     </section>
   </main>
 
