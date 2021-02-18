@@ -1,16 +1,21 @@
 <% /* eslint-disable */ %>
 <%- include("partials/header"); -%>
-  <div class="section-container">
-    <div class="section-row">
-      <div class="project-card">
+  <main>
+    <section>
+      <div class="section-container">
+        <div class="section-row">
 
-        <%  posts.forEach(function(post){ %>
-          <h3 class=project-title><%=post.title%></h3>
-          <p><%=post.lede%></p>
-          <a href="/posts/<%=post.id%>">Read More</a>
-        <% }) %>
+          <%  posts.forEach(function(post){ %>
+            <div class="project-card">
+              <h3 class=project-title><%=post.title%></h3>
+              <p><%=post.lede%></p>
+              <a href="/blog/<%=post.id%>">Read More</a>
+            </div>
+          <% }) %>
+
+        </div>
       </div>
+    </section>
+  </main>
 
-    </div>
-  </div>
 <%- include("partials/footer"); -%>

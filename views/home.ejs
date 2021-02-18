@@ -6,7 +6,7 @@
       <div class="intro-container">
         <div class="col">
           <p class="intro-text">I'm Evan.</p>
-          <p class="intro-text">I'm a full-stack developer.</p>
+          <p class="intro-text">I'm a full stack developer.</p>
           <p class="intro-text">I make things for the web.</p>
         </div>
         <div class="img-col">
@@ -17,7 +17,10 @@
     <section id="about">
       <h2>About</h2>
       <p>
-        testing the dark mode settings
+        My main interest is working at the 'back' of the front-end and the 'front' of the back-end - I love making the server and client-side code give each other high fives.
+      </p>
+      <p>
+        I primarily work in javascript alongside html/css. Some of the technologies that I work with include node.js / express, React, mongoDB. Right now I'm learning more about testing with jest and puppeteer.
       </p>
     </section>
 
@@ -92,14 +95,17 @@
       <h2>Blog</h2>
       <div class="section-container">
         <div class="section-row">
-          <div class="project-card">
 
-            <%  posts.forEach(function(post){ %>
-              <h3 class=project-title><%=post.title%></h3>
-              <p><%=post.lede%></p>
-              <a href="/blog/<%=post.id%>">Read More</a>
+            <%  posts.forEach(function(post, index){ %>
+              <% if (index < 3) { %>
+                <div class="project-card">
+                  <h3 class=project-title><%=post.title%></h3>
+                  <p><%=post.lede%></p>
+                  <a href="/blog/<%=post.id%>">Read More</a>
+                </div>
+              <% } %>
             <% }) %>
-          </div>
+
 
         </div>
       </div>

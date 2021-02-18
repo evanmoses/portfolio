@@ -36,7 +36,7 @@ mongoose.connect(mongoosePort, {
 });
 
 app.get('/', (req, res) => {
-  Post.find({}, (err, posts) => {
+  Post.find({}).sort('date').exec((err, posts) => {
     if (!err) {
       res.render('home', { posts });
     }
@@ -83,23 +83,22 @@ app.delete('/compose/:id', (req, res) => {
   const { id } = req.params;
   Post.findOneAndDelete({ _id: id }, (err) => {
     if (err) res.status(500);
-    console.log('post sucesfully deleted');
+    console.log('post succesfully deleted');
     res.redirect('/');
   });
 });
 app.put('/compose/:id', (req, res) => {
   const { id } = req.params;
+  const { title, lede, content } = req.body;
   Post.findById(id, (err, post) => {
     if (err) res.status(500);
     /* eslint-disable no-param-reassign */
-    console.log(req.body.title);
-    post.title = req.body.title;
-    post.lede = req.body.lede;
-    post.content = req.body.content;
+    post.title = title;
+    post.lede = lede;
+    post.content = content;
     /* eslint-enable no-param-reassign */
     post.save((error, tool) => {
       if (error) res.status(500);
-      console.log(tool);
     });
     res.redirect(`/blog/${id}`);
   });

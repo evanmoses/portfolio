@@ -65,6 +65,7 @@ html {
   --scroll-behavior: smooth;
 
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -75,6 +76,7 @@ body {
 body.dark-theme {
   --text-color: #eee;
   --bkg-color: #222831;
+  --alt-text: #bbb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -82,6 +84,7 @@ body.dark-theme {
   body {
     --text-color: #eee;
     --bkg-color: #222831;
+    --alt-text: #bbb;
   }
 
   body.light-theme {
@@ -90,7 +93,17 @@ body.dark-theme {
   }
 }
 
+h1 {
+  color: var(--text-color);
+  transition: color 1s ease;
+}
+
 h2 {
+  font-size: 4rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  border-bottom: 5px solid #00adb5;
+  width: fit-content;
   color: var(--text-color);
   text-shadow:
     3px 3px var(--bkg-color),
@@ -100,9 +113,10 @@ h2 {
   transition: color 1s ease, text-shadow 0.8s ease;
 }
 
-h1, p {
-  color: var(--text-color);
+p {
+  color: var(--alt-text);
   transition: color 1s ease;
+  font-size: 1.2rem;
 }
 
 body {
@@ -110,6 +124,9 @@ body {
   transition: background-color 0.8s ease, margin-top 0.4s;
   line-height: 1;
   font-family: 'Poppins', sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -324,10 +341,11 @@ main {
   padding: 0 10%;
   max-width: 800;
   margin-bottom: 50px;
+  flex: 1 0 auto;
 }
 
 section {
-  margin: 50px 0;
+  margin: 50px 0 80px;
 }
 
 section::before {
@@ -340,14 +358,6 @@ section::before {
 
 #intro::before {
   margin: -250px 0 0;
-}
-
-h2 {
-  font-size: 4rem;
-  font-weight: 500;
-  margin-bottom: 40px;
-  border-bottom: 5px solid #00adb5;
-  width: fit-content;
 }
 
 /* MAIN CONTENT SECTIONS */
@@ -367,6 +377,7 @@ h2 {
   font-size: 2.5rem;
   padding: 40px 0;
   font-weight: 500;
+  color: var(--text-color);
 }
 
 .profile-pic {
@@ -427,8 +438,13 @@ h2 {
 
 .section-row {
   display: flex;
-  max-width: 1200px;
+  max-width: 1500px;
+  margin-left: -60px;
   flex-wrap: wrap;
+}
+
+#about {
+  max-width: 1200px;
 }
 
 /* Project Cards */
@@ -438,7 +454,7 @@ h2 {
   background-color: #393e46;
   overflow: hidden;
   padding: 10px;
-  margin: 0 60px 60px 0;
+  margin: 0 0 60px 60px;
   height: fit-content;
 }
 
@@ -537,6 +553,7 @@ footer {
   color: #eee;
   text-align: center;
   padding: 15px;
+  flex-shrink: 0;
 }
 
 .footer-link {

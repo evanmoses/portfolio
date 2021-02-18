@@ -1,3 +1,16 @@
+// BLOG BUTTON CLICK HANDLER
+const blogBtn = document.getElementById('blog-nav');
+blogBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (window.location.href.indexOf('#blog') !== -1) {
+    window.location.href = '/#blog';
+  } else if (window.location.href.indexOf('blog') !== -1) {
+    window.location.href = '/blog';
+  } else {
+    window.location.href = '/#blog';
+  }
+});
+
 // DARK MODE
 const btn = document.querySelector('.switch');
 const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
