@@ -450,7 +450,6 @@ section::before {
 }
 
 .content-p {
-  font-size: 1.2rem;
   line-height: 1.8rem;
   margin-bottom: 1.8rem;
 }
@@ -466,6 +465,23 @@ section::before {
 
 .contact-p {
   line-height: 1.8rem;
+}
+
+.post-container {
+  margin-top: 50px;
+  max-width: 900px;
+}
+
+.post-title {
+  color: var(--text-color);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.post-subhead {
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  color: var(--text-color);
 }
 
 /* Project Cards */

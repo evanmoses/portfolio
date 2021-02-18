@@ -97,11 +97,15 @@ app.put('/compose/:id', (req, res) => {
     post.lede = lede;
     post.content = content;
     /* eslint-enable no-param-reassign */
-    post.save((error, tool) => {
+    post.save((error) => {
       if (error) res.status(500);
     });
     res.redirect(`/blog/${id}`);
   });
+});
+
+app.get('/compose/test/posttemplate', (req, res) => {
+  res.render('posttemplate');
 });
 
 let port = process.env.PORT;
