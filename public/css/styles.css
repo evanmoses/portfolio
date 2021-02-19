@@ -149,6 +149,22 @@ nav {
   align-items: center;
 }
 
+p {
+  color: var(--alt-text);
+  transition: color 1s ease;
+  font-size: 1.1rem;
+}
+
+code {
+  font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;
+  font-size: 1rem;
+  background-color: #222;
+}
+
+.hjls {
+  padding: 1rem;
+}
+
 .nav-items {
   display: flex;
   align-items: center;

@@ -14,29 +14,39 @@
     <p class="content-p">
       I decided to make the site one page with additional pages for blog, for individual blog posts, and for my resume. This seemed a good balance between simplicity and discreteness. Our initial (and likely final) file structure looks like:
     </p>
-    <code>
-      portfolio/ (root)
-        .git/
-        node_modules/
-        public/
-          css/
-          images/
-          js/
-        views/
-          partials/
-            header.ejs
-            Footer.ejs
-          home.ejs
-          blog.ejs
-          blogpost.ejs
-          addpost.ejs
-          Resume.ejs
-        app.js
-        package-lock.json
-        package.json
-        .env
-        .gitignore
-    </code>
+    <pre>
+      <code class='language-diff'>portfolio/ (root)
+  .git/
+  node_modules/
+  public/
+    css/
+    images/
+    js/
+  views/
+    partials/
+      header.ejs
+      Footer.ejs
+    home.ejs
+    blog.ejs
+    blogpost.ejs
+    addpost.ejs
+    Resume.ejs
+  app.js
+  package-lock.json
+  package.json
+  .env
+  .gitignore</code>
+    </pre>
+    <pre>
+<code>cardExpanders.forEach((cardExpander) => {
+  cardExpander.addEventListener('mousedown', function () {
+    const thisContent = this.parentNode.getElementsByClassName('toggle-content')[0];
+    const thisIcon = this.parentNode.getElementsByClassName('toggle-icon')[0];
+    thisContent.classList.toggle('expanded');
+    thisIcon.classList.toggle('rotated');
+  });
+});</code>
+    </pre>
     <p class="content-p">
       One of the key decisions that I made was not to include images within the database structure and add / edit post functionality. Having just completed a <a class="content-link"> project <a> with full image upload and edit functionality, there are a lot of additional complexities (in posting to the database and especially in deploying the app) Since I was going to be writing posts all posts myself in pseudo-html - formatted by the ejs template - a simple text database seemed fine. If I really need an image, I can always hard link it in the post body and push a new version of the public images folder to the server.
     </p>
