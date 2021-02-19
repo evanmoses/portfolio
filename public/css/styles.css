@@ -156,9 +156,10 @@ p {
 }
 
 code {
-  font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;
+  font-family: Consolas, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
   font-size: 1rem;
-  background-color: #222;
+  line-height: 1.2rem;
+  max-height: 500px;
 }
 
 .hjls {
@@ -504,7 +505,7 @@ section::before {
 
 .project-card {
   width: 280px;
-  background-color: #393e46;
+  background-color: #484f59;
   overflow: hidden;
   padding: 10px;
   margin: 0 0 60px 60px;

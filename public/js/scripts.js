@@ -20,9 +20,13 @@ const currentTheme = localStorage.getItem('theme');
 if (currentTheme === 'dark') {
   document.body.classList.toggle('dark-theme');
   document.getElementById('check-toggle').checked = true;
+  document.querySelector('link[title="draculamod"]').removeAttribute('disabled');
+  document.querySelector('link[title="stacklightmod"]').setAttribute('disabled', 'disabled');
 } else if (currentTheme === 'light') {
   document.body.classList.toggle('light-theme');
   document.getElementById('check-toggle').checked = false;
+  document.querySelector('link[title="stacklightmod"]').removeAttribute('disabled');
+  document.querySelector('link[title="draculamod"]').setAttribute('disabled', 'disabled');
 }
 
 // toggle dark mode on button click
@@ -33,11 +37,15 @@ btn.addEventListener('change', () => {
     theme = document.body.classList.contains('light-theme')
       ? 'light'
       : 'dark';
+    document.querySelector('link[title="draculamod"]').toggleAttribute('disabled');
+    document.querySelector('link[title="stacklightmod"]').toggleAttribute('disabled');
   } else {
     document.body.classList.toggle('dark-theme');
     theme = document.body.classList.contains('dark-theme')
       ? 'dark'
       : 'light';
+    document.querySelector('link[title="draculamod"]').toggleAttribute('disabled');
+    document.querySelector('link[title="stacklightmod"]').toggleAttribute('disabled');
   }
   localStorage.setItem('theme', theme);
 });

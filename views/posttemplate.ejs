@@ -35,13 +35,40 @@
   package-lock.json
   package.json
   .env
-  .gitignore</code>
+  .gitignore  views/
+      partials/
+        header.ejs
+        Footer.ejs
+      home.ejs
+      blog.ejs
+      blogpost.ejs
+      addpost.ejs
+      Resume.ejs
+    app.js
+    package-lock.json
+    package.json
+    .env
+    .gitignore  views/
+        partials/
+          header.ejs
+          Footer.ejs
+        home.ejs
+        blog.ejs
+        blogpost.ejs
+        addpost.ejs
+        Resume.ejs
+      app.js
+      package-lock.json
+      package.json
+      .env
+      .gitignore</code>
     </pre>
     <pre>
-<code>cardExpanders.forEach((cardExpander) => {
+<code class='language-js'>cardExpanders.forEach((cardExpander) => {
   cardExpander.addEventListener('mousedown', function () {
     const thisContent = this.parentNode.getElementsByClassName('toggle-content')[0];
     const thisIcon = this.parentNode.getElementsByClassName('toggle-icon')[0];
+    // This is a comment
     thisContent.classList.toggle('expanded');
     thisIcon.classList.toggle('rotated');
   });

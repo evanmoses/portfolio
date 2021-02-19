@@ -1,4 +1,8 @@
-/*!
+/*
+
+This is a (any faults my own) modification of:
+
+!
  * StackOverflow.com light style
  *
  * @stackoverflow/stacks v0.56.0
@@ -11,6 +15,11 @@
   padding: 1.5em;
   background: #ddd;
   border-radius: 5px;
+}
+
+.hljs,
+.hljs-subst {
+  color: #222831;
 }
 
 .hljs-comment {
@@ -26,7 +35,7 @@
 .hljs-meta,
 .hljs-selector-pseudo,
 .hljs-attr {
-  color: #015692;
+  color: #007f85;
 }
 
 .hljs-attribute {
@@ -42,7 +51,7 @@
 .hljs-built_in,
 .hljs-title,
 .hljs-literal {
-  color: #b75501;
+  color: #85068a;
 }
 
 .hljs-string,
@@ -53,7 +62,7 @@
 .hljs-link,
 .hljs-selector-attr,
 .hljs-meta-string {
-  color: #54790d;
+  color: #78a345;
 }
 
 .hljs-bullet,

@@ -1,5 +1,7 @@
 /*
 
+This is a (any faults my own) modification of:
+
 Dracula Theme v1.2.0
 
 https://github.com/zenorocha/dracula-theme
@@ -18,7 +20,7 @@ http://zenorocha.mit-license.org
   display: block;
   overflow-x: auto;
   padding: 1.5em;
-  background: #393e46;
+  background: #484f59;
   border-radius: 5px;
 }
 
@@ -27,7 +29,7 @@ http://zenorocha.mit-license.org
 .hljs-literal,
 .hljs-section,
 .hljs-link {
-  color: #8be9fd;
+  color: #00adb5;
 }
 
 .hljs-function .hljs-keyword {
@@ -41,8 +43,6 @@ http://zenorocha.mit-license.org
 
 .hljs-string,
 .hljs-title,
-.hljs-name,
-.hljs-type,
 .hljs-attribute,
 .hljs-symbol,
 .hljs-bullet,
@@ -60,6 +60,13 @@ http://zenorocha.mit-license.org
   color: #6272a4;
 }
 
+.hljs-built_in,
+.hljs-number,
+.hljs-name,
+.hljs-selector-id {
+  color: #eda4a4;
+}
+
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-literal,
@@ -69,7 +76,7 @@ http://zenorocha.mit-license.org
 .hljs-type,
 .hljs-name,
 .hljs-strong {
-  font-weight: 600;
+  font-weight: normal;
 }
 
 .hljs-emphasis {
