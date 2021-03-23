@@ -3,3 +3,4 @@ public/css/.stylelintrc
 npm-debug.log
 .DS_Store
 /*.env
+views/posttemplate.ejs
